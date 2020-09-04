@@ -1,0 +1,8 @@
+.git/
+.github/
+
+.deepsource.toml
+.*ignore
+docker-compose.yml
+Dockerfile
+*.md
