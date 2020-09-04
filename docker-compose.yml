@@ -14,6 +14,7 @@ services:
   registry:
     container_name: rinnegan-registry
     image: rinnegan-registry
+    restart: always
     networks:
       - registry
     ports:
