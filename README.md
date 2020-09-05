@@ -3,59 +3,21 @@
 [![docker Actions Status](https://github.com/court-room/rinnegan-registry/workflows/docker/badge.svg)](https://github.com/court-room/rinnegan-registry/actions)
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/court-room/rinnegan-registry/?ref=repository-badge)
 
-## Pre-Requisite
-
-Run the following commands for setting up the dependencies of your queue
-
-- Create a network with the given name
-
-  ```bash
-  $ docker network create --attachable rinnegan-registry
-  ```
-
-- Create a volume with the given name
-
-  ```bash
-  $ docker volume create rinnegan-registry-data
-  ```
-
-## Setup
+## Development
 
 The queue can be used for locally testing the server or the entire set of services.
-In order to use the queue start up the container using the following commands
+In order to use the queue you need to follow certain steps
 
-- Build the image
-
-  ```bash
-  $ docker-compose build --compress
-  ```
-
-- Launch the container
+- Build the image locally
 
   ```bash
-  $ docker-compose up --detach
+  $ docker build  --compress --force-rm --tag rinnegan-registry:latest .
   ```
 
 _OPTIONAL_
 
-There is a shell script at `bin/orchestrate.sh` that handles the container setup, and tails the logs as well.
-
-## Development
-
-- In order to verify that the container is up
-
-  ```bash
-  $ docker container ls
-  CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                    NAMES
-  7dc266aca14d        rinnegan-registry               "docker-entrypoint.s…"   6 hours ago         Up 6 hours          0.0.0.0:5000->5000/tcp   rinnegan-redis
-  ```
-
-- To log in to the container and run custom commands
-
-  ```bash
-  $ docker container exec --interactive --tty rinnegan-registry sh
-  / #
-  ```
+There is a shell script at `bin/build.sh` that handles the image build,
+tagging and pushing it to the local registry.
 
 ## Contact
 
