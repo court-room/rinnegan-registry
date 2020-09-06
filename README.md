@@ -5,7 +5,7 @@
 
 ## Development
 
-The queue can be used for locally testing the server or the entire set of services.
+The registry can be used for locally testing the server or the entire set of services.
 In order to use the queue you need to follow certain steps
 
 - Build the image locally

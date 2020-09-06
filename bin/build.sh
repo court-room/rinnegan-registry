@@ -2,4 +2,4 @@
 
 clear
 
-docker build  --compress --force-rm --tag rinnegan-registry:latest .
+docker build --compress --force-rm --tag rinnegan-registry:latest .
