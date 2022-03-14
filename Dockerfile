@@ -1,3 +1,3 @@
-FROM registry:2.7.1
+FROM registry:2.8.1
 
 LABEL maintainer="onlinejudge95"
